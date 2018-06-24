@@ -8,10 +8,11 @@ var roleHarvester = {
     },
 
     spawnHarvester: function(spawn, bodyParts, typeValue) {
-      var creepName = spawn.createCreep(bodyParts);
-      var creep = Game.creeps[creepName];
-      creep.memory.role = this.ROLE_NAME;
-      creep.memory.type = typeValue;
+        var creepName = spawn.createCreep(bodyParts);
+        var creep = Game.creeps[creepName];
+        creep.memory.role = this.ROLE_NAME;
+        creep.memory.type = typeValue;
+        creep.memory.ownerId = spawn.id;
     },
 
     DEFAULT_PARTS: [MOVE, CARRY, WORK],

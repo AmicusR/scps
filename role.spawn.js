@@ -1,14 +1,16 @@
-var roleHarvester = require('role.harvester');
+var roleHarvester = require('Default/role.harvester');
 
 var roleSpawn = {
     run: function() {
-        for(var spawn in Game.spawns) {
+        for(var spawnName in Game.spawns) {
+            let spawn = Game.spawns[spawnName];
             if(this.isEnergyFull(spawn)) {
                 roleHarvester.spawnDefaultHarvester(spawn);
             }
         }
     },
 
+    
     isEnergyFull: function(spawn) {
         return spawn.energy == spawn.energyCapacity;
     }
