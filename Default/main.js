@@ -1,4 +1,4 @@
-var controller = require('controller');
+let controller = require('controller');
 
 module.exports.loop = function () {
     controller.run();
